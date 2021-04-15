@@ -1,6 +1,8 @@
 const Player = require('../lib/Player');
 const Potion = require('../lib/Potion');
 
+jest.mock('../lib/Potion.js');
+
 test('creates a player object', () => {
     const player = new Player('Dave');
 
@@ -46,7 +48,7 @@ test('checks if player is alive or not', () => {
     expect(player.isAlive()).toBeFalsy();
 });
 
-test("subtract from player's health", () => {
+test("subtracts from player's health", () => {
     const player = new Player('Dave');
     const oldHealth = player.health;
 
